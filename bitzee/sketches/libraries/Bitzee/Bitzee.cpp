@@ -1,6 +1,6 @@
+#include <Bitzee.h>
 
-
-void Bitzee::Bitzee()
+Bitzee::Bitzee()
 {
   pinMode(PIN_LED_R, OUTPUT);
   pinMode(PIN_LED_G, OUTPUT);
@@ -45,5 +45,5 @@ void Bitzee::recordSound() { }
 void Bitzee::playSound() { }
 
 // Calibrating Bit-zee's motors
-void Bitzee::calibrate(int[] values) { }
+void Bitzee::calibrate(int values[]) { }
 

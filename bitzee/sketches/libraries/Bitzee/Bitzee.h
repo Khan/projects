@@ -28,7 +28,8 @@
 #ifndef Bitzee_h
 #define Bitzee_h
 
-#include <IRremote.h>
+#include <Arduino.h>
+#include <../IRRemote/IRremote.h>
 
 // Code emitted by IR remote control
 const int REMOTE_1_1     = 0x597B;
@@ -76,38 +77,34 @@ class Bitzee {
  private:
 
   // Arduino pins meanings
-  const int PIN_BMP_R = A5;
-  const int PIN_BMP_F = A4;
-  const int PIN_LED_G = A1;
-  const int PIN_LED_R = A0;
-  const int PIN_LED_B = A2;
+  static const int PIN_BMP_R = A5;
+  static const int PIN_BMP_F = A4;
+  static const int PIN_LED_G = A1;
+  static const int PIN_LED_R = A0;
+  static const int PIN_LED_B = A2;
   
-  const int PIN_CAM_IMG = 4;
-  const int PIN_AUD_R   = 2;
-  const int PIN_AUD_P   = 3;
-  const int PIN_CAM_PWR = 5;
-  const int PIN_RIR_RCV = 12;
-  const int PIN_FIR_RCV = 11;
+  static const int PIN_CAM_IMG = 4;
+  static const int PIN_AUD_R   = 2;
+  static const int PIN_AUD_P   = 3;
+  static const int PIN_CAM_PWR = 5;
+  static const int PIN_RIR_RCV = 12;
+  static const int PIN_FIR_RCV = 11;
 
-  const int PIN_MTR_EN  = 6;
-  const int PIN_MTR_L1  = 10;
-  const int PIN_MTR_L2  = 8;
-  const int PIN_MTR_L3  = 9;
-  const int PIN_MTR_L4  = 7;
+  static const int PIN_MTR_EN  = 6;
+  static const int PIN_MTR_L1  = 10;
+  static const int PIN_MTR_L2  = 8;
+  static const int PIN_MTR_L3  = 9;
+  static const int PIN_MTR_L4  = 7;
 
  
-  // IR reciever library
-  IRrecv irrecv(PIN_RIR_RCV);
-  decode_results results;
-
  public:
 
   // Speed values
   static const int FULL;
   static const int SLOW;
 
-  IRrecv Bitzee::irrecv(PIN_RIR_RCV);
-  decode_results Bitzee::results;
+  static IRrecv irrecv;
+  static decode_results results;
 
 
   // Creating a Bit-zee instance
@@ -135,8 +132,8 @@ class Bitzee {
   void playSound();
 
   // Calibrating Bit-zee's motors
-  void calibrate(int[] values);
+  void calibrate(int values[]);
 
-}
+};
 
 #endif // Bitzee.h
