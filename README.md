@@ -1,5 +1,4 @@
-#Bit-zee Bot Code#
+#Khan/Projects#
 
-This project contains code and documentation for the Khan Academy Bit-zee Bot project.
-
-
+This repository contains code and documentation for Khan Academy Projects, including
+the soon to be famous Bit-zee Bot.
